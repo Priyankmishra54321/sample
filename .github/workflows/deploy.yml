@@ -19,8 +19,8 @@ jobs:
           java-version: '17'
           distribution: 'temurin'
 
-      - name: Build JAR
-        run: mvn clean package -DskipTests
+      - name: Build API module only
+        run: mvn clean package -pl api -am -DskipTests
 
       - name: Build Docker Image
         run: docker build -t spring-app .
